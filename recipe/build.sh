@@ -5,5 +5,5 @@ export CXXFLAGS="-I$PREFIX/include -I$PREFIX/include/ncursesw -static-libstdc++"
 
 autoconf
 ./configure --prefix=$PREFIX
-make -j4
+make -j$CPU_COUNT
 make install
