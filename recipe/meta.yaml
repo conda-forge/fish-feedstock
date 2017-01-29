@@ -12,17 +12,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 requirements:
   build:
     - gcc
-    - ncurses
+    - ncurses 5.9*
     - autoconf
     - conda-build >=2.0
   run:
-    - ncurses
+    - ncurses 5.9*
 
 test:
   commands:
