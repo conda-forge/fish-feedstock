@@ -21,6 +21,7 @@ requirements:
     - ncurses 5.9*
     - autoconf
     - automake
+    - libtool
     - conda-build >=2.0
   run:
     - ncurses 5.9*
