@@ -1,6 +1,6 @@
 {% set name = "fish" %}
-{% set version = "2.4.0" %}
-{% set sha256 = "5b7680232cadcadeba42e38aac33bfd4d12333e70342d3d3485ad5d329b1f465" %}
+{% set version = "2.5.0" %}
+{% set sha256 = "03733fc4ec6dbdd10b3711ca5646436610d13ce0c3a14399787ab29471b2c24e" %}
 
 package:
   name: {{ name }}
@@ -12,14 +12,16 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  skip: True  # [win]
+  number: 0
+  skip: True  # [win or osx]
 
 requirements:
   build:
     - gcc
     - ncurses 5.9*
     - autoconf
+    - automake
+    - libtool
     - conda-build >=2.0
   run:
     - ncurses 5.9*
