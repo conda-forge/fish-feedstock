@@ -20,6 +20,7 @@ requirements:
     - gcc
     - ncurses 5.9*
     - autoconf
+    - automake
     - conda-build >=2.0
   run:
     - ncurses 5.9*
