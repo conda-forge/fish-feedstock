@@ -1,6 +1,6 @@
 {% set name = "fish" %}
-{% set version = "2.5.0" %}
-{% set sha256 = "03733fc4ec6dbdd10b3711ca5646436610d13ce0c3a14399787ab29471b2c24e" %}
+{% set version = "2.6.0" %}
+{% set sha256 = "a12d3877eacb941e3212be323adbf396a80d9c1f843ddc94de427f3dfe81c7ad" %}
 
 package:
   name: {{ name }}
