@@ -17,7 +17,8 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - gcc  # [linux]
+    - toolchain  # [osx]
     - ncurses 5.9*
     - autoconf
     - automake
