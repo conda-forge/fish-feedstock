@@ -24,8 +24,9 @@ requirements:
 
 test:
   commands:
-    - fish --help
-    - fish_indent --help
+    - fish -v
+    - fish_indent -v
+    - fish_key_reader -v
 
 about:
   home: https://fishshell.com/
