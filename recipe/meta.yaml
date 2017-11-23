@@ -1,29 +1,24 @@
 {% set name = "fish" %}
-{% set version = "2.6.0" %}
-{% set sha256 = "a12d3877eacb941e3212be323adbf396a80d9c1f843ddc94de427f3dfe81c7ad" %}
+{% set version = "2.7.0" %}
+{% set sha256 = "3a76b7cae92f9f88863c35c832d2427fb66082f98e92a02203dc900b8fa87bcb" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ version }}.tar.gz
-  url: https://github.com/fish-shell/fish-shell/archive/{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
 
 requirements:
   build:
-    - gcc  # [linux]
-    - toolchain  # [osx]
+    - toolchain
     - ncurses 5.9*
-    - autoconf
-    - automake
-    - libtool
-    - conda-build >=2.0
   run:
     - ncurses 5.9*
 
