@@ -26,7 +26,7 @@ test:
   commands:
     - fish -v
     - fish_indent -v
-    - fish_key_reader -v
+    # - fish_key_reader -v  # returns 1 for any flag, so we can't really test it.
 
 about:
   home: https://fishshell.com/
