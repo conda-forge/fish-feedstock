@@ -14,14 +14,16 @@ Summary: The user-friendly command line shell.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/fish-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/fish-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/fish-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/fish-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/fish-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/fish-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/fish-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/fish-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/fish/badges/version.svg)](https://anaconda.org/conda-forge/fish)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/fish/badges/downloads.svg)](https://anaconda.org/conda-forge/fish)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-fish-green.svg)](https://anaconda.org/conda-forge/fish) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fish.svg)](https://anaconda.org/conda-forge/fish) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fish.svg)](https://anaconda.org/conda-forge/fish) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fish.svg)](https://anaconda.org/conda-forge/fish) |
 
 Installing fish
 ===============
