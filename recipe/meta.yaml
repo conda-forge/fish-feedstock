@@ -17,10 +17,12 @@ build:
 
 requirements:
   build:
-    - toolchain
-    - ncurses 5.9*
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - ncurses
   run:
-    - ncurses 5.9*
+    - ncurses
 
 test:
   commands:
