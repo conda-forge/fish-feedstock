@@ -1,6 +1,6 @@
 {% set name = "fish" %}
-{% set version = "3.1.0" %}
-{% set sha256 = "e5db1e6839685c56f172e1000c138e290add4aa521f187df4cd79d4eab294368" %}
+{% set version = "3.1.1" %}
+{% set sha256 = "07dc78eea3bc4cbd490b2f2a2e19e5771ac9e3b6b1a75893039ad8b34d6122b8" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [win or osx]
+  skip: true  # [win or osx]
 
 requirements:
   build:
@@ -35,9 +35,9 @@ test:
 
 about:
   home: https://fishshell.com/
-  license: GPL2
+  license: GPL-2.0-only
   license_file: COPYING
-  summary: 'The user-friendly command line shell.'
+  summary: The user-friendly command line shell.
   doc_url: https://fishshell.com/docs/current/index.html
   dev_url: https://github.com/fish-shell/fish-shell
 
