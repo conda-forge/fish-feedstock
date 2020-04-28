@@ -35,7 +35,7 @@ test:
 
 about:
   home: https://fishshell.com/
-  license: GPL2
+  license: GPL-2.0-only
   license_file: COPYING
   summary: The user-friendly command line shell.
   doc_url: https://fishshell.com/docs/current/index.html
