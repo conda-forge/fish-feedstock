@@ -3,7 +3,7 @@ About fish
 
 Home: https://fishshell.com/
 
-Package license: GPL2
+Package license: GPL-2.0-only
 
 Feedstock license: BSD 3-Clause
 
