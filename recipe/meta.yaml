@@ -1,19 +1,17 @@
 {% set name = "fish" %}
 {% set version = "3.1.2" %}
-{% set sha256 = "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed
 
 build:
-  number: 0
-  skip: true  # [win or osx]
+  number: 1
+  skip: true  # [win]
 
 requirements:
   build:
@@ -21,9 +19,9 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make
-    - pcre2
   host:
     - ncurses
+    - pcre2
   run:
     - ncurses
     - pcre2
