@@ -3,7 +3,7 @@ About fish
 
 Home: https://fishshell.com/
 
-Package license: GPL-2.0-only
+Package license: GPL-2.0-only AND BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fish-feedstock/blob/master/LICENSE.txt)
 
@@ -151,5 +151,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@chrisburr](https://github.com/chrisburr/)
 * [@mdraw](https://github.com/mdraw/)
 

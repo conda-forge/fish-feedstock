@@ -15,5 +15,13 @@ ncurses:
 pin_run_as_build:
   ncurses:
     max_pin: x.x
+  readline:
+    max_pin: x
+  zlib:
+    max_pin: x.x
+readline:
+- '8.0'
 target_platform:
 - osx-arm64
+zlib:
+- '1.2'
