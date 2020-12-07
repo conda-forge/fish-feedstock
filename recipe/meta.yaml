@@ -23,6 +23,7 @@ requirements:
     - cmake
     - make
     - pkg-config
+    - gettext
   host:
     - ncurses
     - gettext
