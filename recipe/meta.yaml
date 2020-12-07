@@ -17,6 +17,7 @@ build:
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     - cmake
     - make
