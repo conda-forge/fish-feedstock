@@ -8,6 +8,9 @@ package:
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed
+  patches:
+    # https://github.com/fish-shell/fish-shell/issues/7467
+    - disable-codesigning.diff
 
 build:
   number: 1
@@ -19,12 +22,12 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make
+    - pkg-config
   host:
     - ncurses
-    - pcre2
-  run:
-    - ncurses
-    - pcre2
+    - gettext
+    - readline
+    - zlib
 
 test:
   commands:
@@ -34,12 +37,15 @@ test:
 
 about:
   home: https://fishshell.com/
-  license: GPL-2.0-only
-  license_file: COPYING
+  license: GPL-2.0-only AND BSD-3-Clause
+  license_file:
+    - COPYING
+    - pcre2-10.32/LICENCE
   summary: The user-friendly command line shell.
   doc_url: https://fishshell.com/docs/current/index.html
   dev_url: https://github.com/fish-shell/fish-shell
 
 extra:
   recipe-maintainers:
+    - chrisburr
     - mdraw
