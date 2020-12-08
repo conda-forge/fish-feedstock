@@ -7,7 +7,8 @@ cd build
 cmake ${CMAKE_ARGS} .. \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-    -DGETTEXT_MSGFMT_EXECUTABLE="${BUILD_PREFIX}/bin/msgfmt"
+    -DGETTEXT_MSGFMT_EXECUTABLE="${BUILD_PREFIX}/bin/msgfmt" \
+    -DFISH_USE_SYSTEM_PCRE2=ON
 
 make -j$CPU_COUNT
 

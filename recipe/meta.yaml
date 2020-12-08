@@ -25,8 +25,9 @@ requirements:
     - pkg-config
     - gettext
   host:
-    - ncurses
     - gettext
+    - ncurses
+    - pcre2
     - readline
     - zlib
 
@@ -41,7 +42,6 @@ about:
   license: GPL-2.0-only AND BSD-3-Clause
   license_file:
     - COPYING
-    - pcre2-10.32/LICENCE
   summary: The user-friendly command line shell.
   doc_url: https://fishshell.com/docs/current/index.html
   dev_url: https://github.com/fish-shell/fish-shell
