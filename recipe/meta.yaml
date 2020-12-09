@@ -1,31 +1,35 @@
 {% set name = "fish" %}
 {% set version = "3.1.2" %}
-{% set sha256 = "d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed
+  patches:
+    # https://github.com/fish-shell/fish-shell/issues/7467
+    - disable-codesigning.diff
 
 build:
-  number: 0
-  skip: true  # [win or osx]
+  number: 1
+  skip: true  # [win]
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
     - cmake
     - make
-    - pcre2
+    - pkg-config
+    - gettext
   host:
-    - ncurses
-  run:
+    - gettext
     - ncurses
     - pcre2
+    - readline
+    - zlib
 
 test:
   commands:
@@ -35,12 +39,14 @@ test:
 
 about:
   home: https://fishshell.com/
-  license: GPL-2.0-only
-  license_file: COPYING
+  license: GPL-2.0-only AND BSD-3-Clause
+  license_file:
+    - COPYING
   summary: The user-friendly command line shell.
   doc_url: https://fishshell.com/docs/current/index.html
   dev_url: https://github.com/fish-shell/fish-shell
 
 extra:
   recipe-maintainers:
+    - chrisburr
     - mdraw
