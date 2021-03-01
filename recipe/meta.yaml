@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz
   sha256: 4f0293ed9f6a6b77e47d41efabe62f3319e86efc8bf83cc58733044fbc6f9211
-  patches:
-    # https://github.com/fish-shell/fish-shell/issues/7467
-    - disable-codesigning.diff
 
 build:
   number: 0
