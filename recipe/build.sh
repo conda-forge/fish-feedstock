@@ -1,6 +1,6 @@
 #!/bin/sh
 # Get an updated config.sub and config.guess
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./pcre2-10.32
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./pcre2/
 
 mkdir build
 cd build
