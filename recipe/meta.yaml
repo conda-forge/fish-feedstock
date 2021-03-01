@@ -1,19 +1,19 @@
 {% set name = "fish" %}
-{% set version = "3.1.2" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d5b927203b5ca95da16f514969e2a91a537b2f75bec9b21a584c4cd1c7aa74ed
+  url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz
+  sha256: 4f0293ed9f6a6b77e47d41efabe62f3319e86efc8bf83cc58733044fbc6f9211
   patches:
     # https://github.com/fish-shell/fish-shell/issues/7467
     - disable-codesigning.diff
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
