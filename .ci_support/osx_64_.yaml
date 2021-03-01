@@ -12,6 +12,8 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 ncurses:
 - '6.2'
+pcre2:
+- '10.36'
 pin_run_as_build:
   ncurses:
     max_pin: x.x
