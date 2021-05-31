@@ -13,7 +13,7 @@ docker_image:
 ncurses:
 - '6.2'
 pcre2:
-- '10.36'
+- '10.37'
 pin_run_as_build:
   ncurses:
     max_pin: x.x
@@ -22,7 +22,7 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 readline:
-- '8.0'
+- '8'
 target_platform:
 - linux-64
 zip_keys:
