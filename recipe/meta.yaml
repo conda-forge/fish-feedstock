@@ -1,5 +1,5 @@
 {% set name = "fish" %}
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz
-  sha256: a4215e4cab2a5b101b0b8843720bda3c7eb98e8a14dca0950b8ef17e94282faa
+  sha256: b5b4ee1a5269762cbbe993a4bd6507e675e4100ce9bbe84214a5eeb2b19fae89
 
 build:
   number: 0
