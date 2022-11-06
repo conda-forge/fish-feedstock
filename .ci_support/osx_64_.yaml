@@ -9,18 +9,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '14'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 ncurses:
 - '6'
 pcre2:
-- '10.37'
-pin_run_as_build:
-  readline:
-    max_pin: x
-  zlib:
-    max_pin: x.x
+- '10.40'
 readline:
 - '8'
 target_platform:
