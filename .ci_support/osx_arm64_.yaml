@@ -7,20 +7,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '14'
 macos_machine:
 - arm64-apple-darwin20.0.0
 ncurses:
 - '6'
 pcre2:
 - '10.37'
-pin_run_as_build:
-  readline:
-    max_pin: x
-  zlib:
-    max_pin: x.x
-readline:
-- '8'
 target_platform:
 - osx-arm64
 zlib:
