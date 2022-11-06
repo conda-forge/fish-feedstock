@@ -14,8 +14,6 @@ ncurses:
 - '6'
 pcre2:
 - '10.40'
-readline:
-- '8'
 target_platform:
 - linux-64
 zlib:
