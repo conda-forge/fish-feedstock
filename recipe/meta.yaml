@@ -10,13 +10,14 @@ source:
   sha256: 614c9f5643cd0799df391395fa6bbc3649427bb839722ce3b114d3bbc1a3b250
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make
     - pkg-config
@@ -27,7 +28,6 @@ requirements:
     - pcre2
     - zlib
   run:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   commands:
