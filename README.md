@@ -5,13 +5,13 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fish-feedstock/
 
 Home: https://fishshell.com/
 
-Package license: GPL-2.0-only AND BSD-3-Clause
+Package license: GPL-2.0-only
 
-Summary: The user-friendly command line shell.
+Summary: User-friendly command-line shell for UNIX-like operating systems
 
 Development: https://github.com/fish-shell/fish-shell
 
-Documentation: https://fishshell.com/docs/current/index.html
+Fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family.
 
 Current build status
 ====================
@@ -63,6 +63,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=303&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fish-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=303&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fish-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -194,6 +201,4 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@chrisburr](https://github.com/chrisburr/)
-* [@mdraw](https://github.com/mdraw/)
 
