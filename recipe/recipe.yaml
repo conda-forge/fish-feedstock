@@ -1,0 +1,42 @@
+context:
+  version: "4.0.0"
+
+package:
+  name: fish
+  version: ${{ version }}
+
+source:
+  url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
+  sha256: 2fda5bd970357064d8d4c896e08285ba59965ca2a8c4829ca8a82bf3b89c69f3
+
+build:
+  script: |
+    cmake -S . -B build \
+      -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+      -DCMAKE_INSTALL_SYSCONFDIR="${PREFIX}/etc" \
+      -Dextra_functionsdir="${PREFIX}/share/fish/vendor_functions.d" \
+      -Dextra_completionsdir="${PREFIX}/share/fish/vendor_completions.d" \
+      -Dextra_confdir="${PREFIX}/share/fish/vendor_conf.d"
+    cmake --build build
+    cmake --install build
+
+requirements:
+  build:
+    - cmake
+    - "${{ compiler('rust') }}"
+  host:
+    - ncurses
+    - pcre2
+  run: []
+
+tests:
+  - script: fish -c "echo"
+
+about:
+  homepage: https://fishshell.com
+  license: GPL-2.0-only
+  license_file: COPYING
+  summary: User-friendly command-line shell for UNIX-like operating systems
+  description: |
+    Fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family.
+  repository: https://github.com/fish-shell/fish-shell
