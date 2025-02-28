@@ -10,27 +10,25 @@ source:
   sha256: 2fda5bd970357064d8d4c896e08285ba59965ca2a8c4829ca8a82bf3b89c69f3
 
 build:
-  script: |
-    cmake -S . -B build \
-      -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-      -DCMAKE_INSTALL_SYSCONFDIR="${PREFIX}/etc" \
-      -Dextra_functionsdir="${PREFIX}/share/fish/vendor_functions.d" \
-      -Dextra_completionsdir="${PREFIX}/share/fish/vendor_completions.d" \
-      -Dextra_confdir="${PREFIX}/share/fish/vendor_conf.d"
-    cmake --build build
-    cmake --install build
+  script: build.sh
+  skip: win
 
 requirements:
   build:
     - cmake
+    - make
     - "${{ compiler('rust') }}"
+    - "${{ compiler('c') }}"
+    - gettext
   host:
     - ncurses
     - pcre2
   run: []
 
 tests:
-  - script: fish -c "echo"
+  - script: |
+      fish -v
+      fish_indent -v
 
 about:
   homepage: https://fishshell.com
