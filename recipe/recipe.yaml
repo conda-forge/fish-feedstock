@@ -12,7 +12,10 @@ source:
     - patches/gettext-cstr-from-bytes-until-nul.patch
 
 build:
-  script: build.sh
+  number: 0
+  script: 
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    - build.sh
   skip:
     - win
 
@@ -20,8 +23,10 @@ requirements:
   build:
     - cmake
     - make
-    - "${{ compiler('rust') }}"
-    - "${{ compiler('c') }}"
+    - ${{ compiler('rust') }}
+    - cargo-bundle-licenses
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
     - gettext
   host:
     - ncurses
@@ -40,8 +45,15 @@ tests:
 about:
   homepage: https://fishshell.com
   license: GPL-2.0-only
-  license_file: COPYING
+  license_file:
+    - THIRDPARTY.yml
+    - COPYING
   summary: User-friendly command-line shell for UNIX-like operating systems
   description: |
     Fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family.
   repository: https://github.com/fish-shell/fish-shell
+
+extra:
+  recipe-maintainers:
+    - chrisburr
+    - mdraw
