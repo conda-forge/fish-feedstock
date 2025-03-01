@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
   sha256: 2fda5bd970357064d8d4c896e08285ba59965ca2a8c4829ca8a82bf3b89c69f3
+  patches:
+    - patches/gettext-cstr-from-bytes-until-nul.patch
 
 build:
   script: build.sh
