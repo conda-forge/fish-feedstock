@@ -1,5 +1,6 @@
 #!/bin/sh
 
+cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 mkdir build
 cd build
 export RUSTFLAGS="${CARGO_BUILD_RUSTFLAGS}"

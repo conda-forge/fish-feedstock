@@ -13,9 +13,7 @@ source:
 
 build:
   number: 0
-  script: 
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - build.sh
+  script: build.sh
   skip:
     - win
 
