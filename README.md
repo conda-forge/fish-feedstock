@@ -5,13 +5,13 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fish-feedstock/
 
 Home: https://fishshell.com/
 
-Package license: GPL-2.0-only AND BSD-3-Clause
+Package license: GPL-2.0-only
 
-Summary: The user-friendly command line shell.
+Summary: User-friendly command-line shell for UNIX-like operating systems
 
 Development: https://github.com/fish-shell/fish-shell
 
-Documentation: https://fishshell.com/docs/current/index.html
+Fish is a smart and user-friendly command line shell for macOS, Linux, and the rest of the family.
 
 Current build status
 ====================
