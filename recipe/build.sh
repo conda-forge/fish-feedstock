@@ -4,8 +4,10 @@ cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 mkdir build
 cd build
 export RUSTFLAGS="${CARGO_BUILD_RUSTFLAGS}"
-# CFLAGS -mcpu=power8 -mtune=power8 break the ppc64le build
-export CFLAGS=$(echo $CFLAGS | sed -E 's?-mcpu=[^ ]+ ??; s?-mtune=[^ ]+ ??')
+if [[ "${target_platform}" == "linux-ppc64le" ]]; then
+  # CFLAGS -mcpu=power8 -mtune=power8 break the ppc64le build
+  export CFLAGS=$(echo $CFLAGS | sed -E 's?-mcpu=[^ ]+ ??; s?-mtune=[^ ]+ ??')
+fi
 cmake ${CMAKE_ARGS} .. \
       -DCMAKE_BUILD_TYPE="Release" \
       -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
