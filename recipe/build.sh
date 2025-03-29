@@ -11,10 +11,11 @@ fi
 cmake ${CMAKE_ARGS} .. \
       -DCMAKE_BUILD_TYPE="Release" \
       -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+      -DRUST_BUILD_TARGET=$CARGO_BUILD_TARGET \
       -DWITH_GETTEXT=ON \
       -DGETTEXT_MSGFMT_EXECUTABLE="${BUILD_PREFIX}/bin/msgfmt" \
       -DFISH_USE_SYSTEM_PCRE2=ON \
       -DMAC_CODESIGN_ID=OFF
-      
+
 cmake --build .
 cmake --install .
