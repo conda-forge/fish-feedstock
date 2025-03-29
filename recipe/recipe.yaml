@@ -13,10 +13,7 @@ source:
 
 build:
   number: 1
-  script:
-    file: build.sh
-    env:
-      CARGO_BUILD_TARGET: ${{ rust_target }}
+  script: build.sh
   skip:
     - win
 
