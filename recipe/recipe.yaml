@@ -1,5 +1,5 @@
 context:
-  version: "4.0.1"
+  version: "4.0.2"
 
 package:
   name: fish
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
-  sha256: 4ed63a70207283e15cf21fc5f21db4230421e4f98d4826b5b1c8254d69c762b5
+  sha256: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
   patches:
     - patches/gettext-cstr-from-bytes-until-nul.patch
 
 build:
-  number: 1
+  number: 0
   script: build.sh
   skip:
     - win
