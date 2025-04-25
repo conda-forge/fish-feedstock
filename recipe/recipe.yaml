@@ -41,7 +41,7 @@ tests:
         - pexpect
     files:
       recipe:
-        - test_shell.exp
+        - test_shell.py
 
 about:
   homepage: https://fishshell.com
