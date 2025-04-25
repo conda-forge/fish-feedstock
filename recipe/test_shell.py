@@ -9,10 +9,11 @@ import pexpect
 import sys
 
 print("Spawning interactive fish shell")
-fish = pexpect.spawn('fish -N', echo=False)
+fish = pexpect.spawn('fish -N', echo=False, timeout=10)
+fish.logfile = sys.stdout.buffer
 
 print("Waiting for fish prompt...")
-index = fish.expect_exact([">", pexpect.EOF, pexpect.TIMEOUT], timeout=5)
+index = fish.expect_exact([">", pexpect.EOF, pexpect.TIMEOUT])
 if index == 0:
     print("Found fish prompt")
 else:
@@ -22,8 +23,9 @@ print("Sending command to fish")
 fish.sendline("echo hel''lo")
 
 print("Waiting for command response...")
-index = fish.expect_exact(["hello", pexpect.EOF, pexpect.TIMEOUT], timeout=5)
+index = fish.expect_exact(["hello", pexpect.EOF, pexpect.TIMEOUT])
 if index == 0:
     print("Found command response")
 else:
+    print(str(fish))
     sys.exit("ERROR: Timed out waiting for command response")
