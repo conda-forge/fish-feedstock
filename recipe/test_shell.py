@@ -7,6 +7,7 @@
 
 import pexpect
 import sys
+import time
 
 print("Spawning interactive fish shell")
 fish = pexpect.spawn('fish -N', echo=False, timeout=10)
@@ -19,8 +20,10 @@ if index == 0:
 else:
     sys.exit("ERROR: Timed out waiting for fish prompt")
 
+time.sleep(5)
+
 print("Sending command to fish")
-fish.sendline("echo hel''lo")
+fish.send("echo hel''lo\r\n")
 
 print("Waiting for command response...")
 index = fish.expect_exact(["hello", pexpect.EOF, pexpect.TIMEOUT])
