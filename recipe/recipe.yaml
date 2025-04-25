@@ -35,13 +35,17 @@ tests:
   - script:
       - fish -v
       - fish_indent -v
-      - expect -d ./test_shell.exp
-    requirements:
-      run:
-        - expect
-    files:
-      recipe:
-        - test_shell.exp
+  # 'expect' is only packaged for linux-64
+  - if: linux and x86_64
+    then:
+      - script:
+          - expect -d ./test_shell.exp
+        requirements:
+          run:
+            - expect
+        files:
+          recipe:
+            - test_shell.exp
 
 about:
   homepage: https://fishshell.com
