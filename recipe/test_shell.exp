@@ -1,0 +1,33 @@
+#!/usr/bin/env expect
+#
+# Test for a bug where fish-shell will hang when launched interactively.
+#
+# This tests for a regression reported in
+# https://github.com/conda-forge/fish-feedstock/issues/58
+
+send_user "Spawning interactive fish shell\n"
+spawn fish -N
+
+send_user "Waiting for fish prompt...\n"
+expect {
+	">" {
+		send_user "Found fish prompt\n"
+	} default {
+		send_user "ERROR: Timed out waiting for fish prompt\n"
+		exit 1
+	}
+}
+
+send_user "Sending command to fish\n"
+send "echo hel''lo\n"
+
+send_user "Waiting for command response...\n"
+expect {
+	hello {
+		send_user "Found command response\n"
+		exit 0
+	} default {
+		send_user "ERROR: Timed out waiting for command response\n"
+		exit 1
+	}
+}

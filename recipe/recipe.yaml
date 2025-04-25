@@ -12,7 +12,7 @@ source:
     - patches/gettext-cstr-from-bytes-until-nul.patch
 
 build:
-  number: 0
+  number: 1
   script: build.sh
   skip:
     - win
@@ -32,9 +32,16 @@ requirements:
   run: []
 
 tests:
-  - script: |
-      fish -v
-      fish_indent -v
+  - script:
+      - fish -v
+      - fish_indent -v
+      - expect -d ./test_shell.exp
+    requirements:
+      run:
+        - expect
+    files:
+      recipe:
+        - test_shell.exp
 
 about:
   homepage: https://fishshell.com
