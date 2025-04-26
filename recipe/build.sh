@@ -12,7 +12,7 @@ export RUSTFLAGS="${CARGO_BUILD_RUSTFLAGS}"
 extra_cmake_args=(
     -DWITH_GETTEXT=ON
     -DGETTEXT_MSGFMT_EXECUTABLE="${BUILD_PREFIX}/bin/msgfmt"
-    -DFISH_USE_SYSTEM_PCRE2=ON
+    -DFISH_USE_SYSTEM_PCRE2=OFF
 )
 
 case "${target_platform}" in
