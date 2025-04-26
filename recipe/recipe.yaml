@@ -21,7 +21,7 @@ requirements:
   build:
     - cmake
     - make
-    - ${{ compiler('rust') }}
+    - ${{ compiler('rust') }} <1.80
     - cargo-bundle-licenses
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
