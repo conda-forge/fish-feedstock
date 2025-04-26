@@ -32,7 +32,7 @@ if [[ "${target_platform}" != "${build_platform}" ]]; then
     )
 fi
 
-cmake ${CMAKE_ARGS} "${extra_cmake_args}" ${SRC_DIR}
+cmake ${CMAKE_ARGS} "${extra_cmake_args[@]}" ${SRC_DIR}
 
 cmake --build .
 cmake --install .
