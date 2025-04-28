@@ -14,7 +14,7 @@ fish = pexpect.spawn('fish -N', logfile=sys.stdout.buffer)
 
 print("Waiting for fish prompt...")
 index = fish.expect_exact(["#", ">", pexpect.EOF, pexpect.TIMEOUT])
-if index == 0:
+if index in [0, 1]:
     print("Found fish prompt")
 else:
     sys.exit("ERROR: Timed out waiting for fish prompt")
