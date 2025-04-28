@@ -22,6 +22,8 @@ else:
 time.sleep(5)
 
 print("Sending command to fish")
+fish.sendcontrol('c')
+fish.sendline("echo hel''lo")
 fish.sendline("echo hel''lo")
 
 print("Waiting for command response...")
