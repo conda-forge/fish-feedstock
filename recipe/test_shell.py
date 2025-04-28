@@ -29,8 +29,8 @@ time.sleep(5)
 
 print("Sending command to fish")
 fish.sendcontrol('c')
-fish.sendline("echo hel''lo")
-fish.sendline("echo hel''lo")
+fish.send("echo hel''lo\n")
+fish.send("echo hel''lo\n")
 
 print("Waiting for command response...")
 index = fish.expect_exact(["hello", pexpect.EOF, pexpect.TIMEOUT])
