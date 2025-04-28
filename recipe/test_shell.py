@@ -8,6 +8,12 @@
 import pexpect
 import sys
 import time
+import os
+
+# fish-shell outputs terminal escape sequences which can mess up the
+# prompt. Force fish-shell to use a fixed terminal that has minimal
+# escape sequences.
+os.environ['TERM'] = 'unknown'
 
 print("Spawning interactive fish shell")
 fish = pexpect.spawn('fish -N', logfile=sys.stdout.buffer)
