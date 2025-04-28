@@ -35,7 +35,7 @@ tests:
   - script:
       - fish -v
       - fish_indent -v
-      - python ./test_shell.py
+      - TERM=unknown python ./test_shell.py
     requirements:
       run:
         - pexpect
