@@ -5,18 +5,19 @@
 # This tests for a regression reported in
 # https://github.com/conda-forge/fish-feedstock/issues/58
 
-import pexpect
+import os
 import sys
 import time
-import os
+
+import pexpect
 
 # fish-shell outputs terminal escape sequences which can mess up the
 # prompt. Force fish-shell to use a fixed terminal that has minimal
 # escape sequences.
-os.environ['TERM'] = 'unknown'
-
 print("Spawning interactive fish shell")
-fish = pexpect.spawn('fish -N', logfile=sys.stdout.buffer)
+fish = pexpect.spawn(
+    "fish -N", logfile=sys.stdout.buffer, env=os.environ | {"TERM": "dumb"}
+)
 
 print("Waiting for fish prompt...")
 index = fish.expect_exact(["#", ">", pexpect.EOF, pexpect.TIMEOUT])
@@ -28,7 +29,7 @@ else:
 time.sleep(5)
 
 print("Sending command to fish")
-fish.sendcontrol('c')
+fish.sendcontrol("c")
 fish.send("echo hel''lo\n")
 fish.send("echo hel''lo\n")
 
