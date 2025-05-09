@@ -16,7 +16,7 @@ import pexpect
 # escape sequences.
 print("Spawning interactive fish shell")
 fish = pexpect.spawn(
-    "fish -N", logfile=sys.stdout.buffer, env=os.environ | {"TERM": "dumb"}
+    "fish -N", logfile=sys.stdout.buffer, env=os.environ | {"TERM": "xterm-256color"}
 )
 
 print("Waiting for fish prompt...")
