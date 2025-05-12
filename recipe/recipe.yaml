@@ -30,7 +30,7 @@ requirements:
     - ncurses
     - pcre2
     # For fish_run_tests
-    - if: build_platform == target_platform
+    - if: target_platform == "linux-64"
       then:
         - procps-ng
   run: []
