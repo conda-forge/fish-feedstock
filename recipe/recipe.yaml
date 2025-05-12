@@ -29,19 +29,16 @@ requirements:
   host:
     - ncurses
     - pcre2
+    # For fish_run_tests
+    - if: build_platform == target_platform
+      then:
+        - procps-ng
   run: []
 
 tests:
   - script:
       - fish -v
       - fish_indent -v
-      - python ./test_shell.py
-    requirements:
-      run:
-        - pexpect
-    files:
-      recipe:
-        - test_shell.py
 
 about:
   homepage: https://fishshell.com

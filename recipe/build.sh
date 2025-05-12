@@ -35,4 +35,9 @@ fi
 cmake ${CMAKE_ARGS} "${extra_cmake_args[@]}" ${SRC_DIR}
 
 cmake --build .
+
+if [[ "${target_platform}" == "${build_platform}" ]]; then
+    cmake --build . --target fish_run_tests
+fi
+
 cmake --install .
