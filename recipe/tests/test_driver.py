@@ -43,6 +43,8 @@ def makeenv(script_path, home, test_helper_path):
     tmp = home + "/temp"
     os.makedirs(tmp)
 
+    cc = os.environ.get("CC", "cc")
+
     # Compile fish_test_helper if necessary.
     # If we're run multiple times, allow keeping this around to save time.
     if test_helper_path:
@@ -50,7 +52,7 @@ def makeenv(script_path, home, test_helper_path):
         if not os.path.exists(thp / "fish_test_helper"):
             comp = subprocess.run(
                 [
-                    "cc",
+                    cc,
                     script_path / "fish_test_helper.c",
                     "-o",
                     thp / "fish_test_helper",
@@ -60,7 +62,7 @@ def makeenv(script_path, home, test_helper_path):
     else:
         comp = subprocess.run(
             [
-                "cc",
+                cc,
                 script_path / "fish_test_helper.c",
                 "-o",
                 home + "/fish_test_helper",
