@@ -39,6 +39,16 @@ tests:
   - script:
       - fish -v
       - fish_indent -v
+  - script:
+      - python ./tests/test_driver.py $CONDA_PREFIX/bin ./tests/pexpects/abbrs.py
+    requirements:
+      run:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - pexpect
+    files:
+      recipe:
+        - tests/
 
 about:
   homepage: https://fishshell.com
