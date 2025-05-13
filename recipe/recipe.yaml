@@ -10,6 +10,7 @@ source:
   sha256: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
   patches:
     - patches/gettext-cstr-from-bytes-until-nul.patch
+  target_directory: src
 
 build:
   number: 1

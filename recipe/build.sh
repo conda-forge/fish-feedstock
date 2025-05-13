@@ -2,7 +2,9 @@
 
 set -exo pipefail
 
-cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+pushd src
+cargo-bundle-licenses --format yaml --output ../THIRDPARTY.yml
+popd
 
 mkdir build
 cd build
@@ -32,7 +34,7 @@ if [[ "${target_platform}" != "${build_platform}" ]]; then
     )
 fi
 
-cmake ${CMAKE_ARGS} "${extra_cmake_args[@]}" ${SRC_DIR}
+cmake ${CMAKE_ARGS} "${extra_cmake_args[@]}" ${SRC_DIR}/src
 
 cmake --build .
 
