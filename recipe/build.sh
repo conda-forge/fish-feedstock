@@ -2,9 +2,8 @@
 
 set -exo pipefail
 
-pushd src
+cd src
 cargo-bundle-licenses --format yaml --output ../THIRDPARTY.yml
-popd
 
 mkdir build
 cd build
