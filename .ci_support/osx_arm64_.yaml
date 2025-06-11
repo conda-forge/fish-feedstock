@@ -19,7 +19,7 @@ macos_machine:
 ncurses:
 - '6'
 pcre2:
-- '10.44'
+- '10.45'
 rust_compiler:
 - rust
 target_platform:
