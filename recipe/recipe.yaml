@@ -1,18 +1,20 @@
 context:
-  version: "4.0.3"
+  version: "4.0.2"
 
 package:
   name: fish
   version: ${{ version }}
 
 source:
-  url: https://github.com/fish-shell/fish-shell/archive/5346d3d491a4f2379b8f35869d810b396cd62526.zip
-  sha256: c55079bd5e363dcd5f4e833136f8427c1279efc06909a63f40b6d86974750018
+  url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
+  sha256: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
   target_directory: src
 
 build:
   number: 1
-  script: FISH_BUILD_VERSION=4.0.3 build.sh
+  script: build.sh
+  prefix_detection:
+    ignore_binary_files: true
   skip:
     - win
 
