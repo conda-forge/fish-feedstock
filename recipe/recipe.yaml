@@ -8,12 +8,13 @@ package:
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
   sha256: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
-  patches:
-    - patches/gettext-cstr-from-bytes-until-nul.patch
+  target_directory: src
 
 build:
-  number: 1
+  number: 2
   script: build.sh
+  prefix_detection:
+    ignore_binary_files: true
   skip:
     - win
 
@@ -29,12 +30,26 @@ requirements:
   host:
     - ncurses
     - pcre2
+    # For fish_run_tests
+    - if: target_platform == "linux-64"
+      then:
+        - procps-ng
   run: []
 
 tests:
-  - script: |
-      fish -v
-      fish_indent -v
+  - script:
+      - fish -v
+      - fish_indent -v
+  - script:
+      - python ./tests/test_driver.py $CONDA_PREFIX/bin ./tests/pexpects/abbrs.py
+    requirements:
+      run:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - pexpect
+    files:
+      recipe:
+        - tests/
 
 about:
   homepage: https://fishshell.com
