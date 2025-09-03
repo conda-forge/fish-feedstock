@@ -11,7 +11,7 @@ source:
   target_directory: src
 
 build:
-  number: 2
+  number: 3
   script: build.sh
   prefix_detection:
     ignore_binary_files: true
