@@ -1,5 +1,5 @@
 context:
-  version: "4.0.2"
+  version: "4.0.6"
 
 package:
   name: fish
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
-  sha256: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
+  sha256: 125d9ce0dd8a3704dc0782925df34f0208bffc42af5f34914449d14c34b5dae1
   target_directory: src
 
 build:
-  number: 2
+  number: 0
   script: build.sh
   prefix_detection:
     ignore_binary_files: true
