@@ -9,6 +9,8 @@ source:
   url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
   sha256: aaf567cac98aa92fed9db3280801e2de45306169c8915e0fff1a61c07e56d2c1
   target_directory: src
+  patches:
+    - patches/0001-tests-test_driver.py-use-CC-for-compilation.patch
 
 build:
   number: 0
@@ -41,15 +43,15 @@ tests:
       - fish -v
       - fish_indent -v
   - script:
-      - python ./tests/test_driver.py $CONDA_PREFIX/bin ./tests/pexpects/abbrs.py
+      - python ./src/tests/test_driver.py $CONDA_PREFIX/bin ./src/tests/pexpects/abbrs.py
     requirements:
       run:
         - ${{ compiler('c') }}
         - ${{ stdlib("c") }}
         - pexpect
     files:
-      recipe:
-        - tests/
+      source:
+        - src/tests/
 
 about:
   homepage: https://fishshell.com
