@@ -1,0 +1,32 @@
+From a9e618964abbb9bdf3e6f46ab2feaea597d4f00a Mon Sep 17 00:00:00 2001
+From: Brandon Maier <brandon.maier@gmail.com>
+Date: Thu, 9 Oct 2025 15:05:05 +0000
+Subject: [PATCH] tests/test_driver.py: use "CC" for compilation
+
+Use the "CC" environment variable for C compilation, so that the
+conda-forge distro can run tests.
+
+The conda-forge distro does not install a `cc` command in $PATH, but
+uses "CC" to declare which compiler to use.
+---
+ tests/test_driver.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/tests/test_driver.py b/tests/test_driver.py
+index 303718c19..3f221b88f 100755
+--- a/tests/test_driver.py
++++ b/tests/test_driver.py
+@@ -94,9 +94,10 @@ def makeenv(script_path: Path, home: Path) -> Dict[str, str]:
+ 
+ 
+ def compile_test_helper(source_path: Path, binary_path: Path) -> None:
++    cc = os.environ.get("CC", "cc")
+     subprocess.run(
+         [
+-            "cc",
++            cc,
+             source_path,
+             "-o",
+             binary_path,
+-- 
+2.51.0
