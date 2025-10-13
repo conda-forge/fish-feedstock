@@ -42,3 +42,8 @@ if [[ "${target_platform}" == "linux-64" ]]; then
 fi
 
 cmake --install .
+
+# Tell `pixi global` to not set CONDA_PREFIX during activation
+# https://pixi.sh/dev/global_tools/introduction/#opt-out-of-conda_prefix
+mkdir -p "${PREFIX}/etc/pixi/fish"
+touch "${PREFIX}/etc/pixi/fish/global-ignore-conda-prefix"
