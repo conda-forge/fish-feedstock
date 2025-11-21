@@ -13,7 +13,7 @@ source:
     - patches/0001-tests-test_driver.py-use-CC-for-compilation.patch
 
 build:
-  number: 0
+  number: 1
   script: build.sh
   prefix_detection:
     ignore_binary_files: true
