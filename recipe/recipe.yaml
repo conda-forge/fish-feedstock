@@ -1,5 +1,5 @@
 context:
-  version: "4.3.3"
+  version: "4.4.0"
 
 package:
   name: fish
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/fish-shell/fish-shell/releases/download/${{ version }}/fish-${{ version }}.tar.xz
-  sha256: eba0e7d325c1d46046bb9d29434e7e0dabf7f584eb156845005d688e10b86e57
+  sha256: 529e1072c034f6c9d21a922c359886df75129c3d81a15bd8656a3c4860993ad5
   target_directory: src
   patches:
     - patches/0001-tests-test_driver.py-use-CC-for-compilation.patch
