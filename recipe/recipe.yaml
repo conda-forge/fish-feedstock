@@ -13,7 +13,7 @@ source:
     - patches/0001-tests-test_driver.py-use-CC-for-compilation.patch
 
 build:
-  number: 0
+  number: 1
   script: build.sh
   prefix_detection:
     ignore_binary_files: true
@@ -24,6 +24,7 @@ requirements:
   build:
     - cmake
     - make
+    - sphinx
     - ${{ compiler('rust') }}
     - cargo-bundle-licenses
     - ${{ compiler('c') }}
@@ -42,6 +43,9 @@ tests:
   - script:
       - fish -v
       - fish_indent -v
+      - test -f "$PREFIX/share/fish/man/man1/string.1"
+      - fish -c 'test -f "$__fish_man_dir/man1/string.1"'
+      - if command -v man >/dev/null; then MANPAGER=cat fish -c 'string -h >/dev/null'; fi
   - script:
       - python ./src/tests/test_driver.py $CONDA_PREFIX/bin ./src/tests/pexpects/abbrs.py
     requirements:

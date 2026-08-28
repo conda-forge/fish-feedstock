@@ -14,6 +14,7 @@ extra_cmake_args=(
     -DWITH_MESSAGE_LOCALIZATION=ON
     -DGETTEXT_MSGFMT_EXECUTABLE="${BUILD_PREFIX}/bin/msgfmt"
     -DFISH_USE_SYSTEM_PCRE2=ON
+    -DWITH_DOCS=ON
 )
 
 case "${target_platform}" in
